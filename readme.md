@@ -28,7 +28,7 @@ to obtain the name of a caller.
 ## Development
 
 ```shell script
-git clone ......phone_lookup
+git clone https://github.com/panos-stavrianos/phone_lookup.git
 cd phone_lookup
 ```
 
