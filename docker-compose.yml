@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    restart: always
+    image: phone_lookup:1.0.0
+    ports:
+      - '3030:80'
+    volumes:
+      - './app-data:/usr/app-data'
+    environment:
+      - APP_DATA=/usr/app-data
+      - MYSQL_HOST=192.168.1.100
+      - MYSQL_PORT=3306
+      - MYSQL_USER=user
+      - MSSQL_PASSWORD=password
+      - MSSQL_DATABASE=database
+
+# docker-compose up -d
+
+
+

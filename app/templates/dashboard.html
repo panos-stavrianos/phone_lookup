@@ -1,0 +1,57 @@
+{% extends "application.html" %}
+
+{% block content %}
+    <div class="content">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Most 50 frequent</h1>
+                    <table class="table dt-responsive nowrap" cellspacing="0"
+                           width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Times</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for phone in frequent %}
+                            <tr class="{{ 'red' if not phone['registered'] }}">
+                                <td>{{ phone['name'] }}</td>
+                                <td>{{ phone['phone'] }}</td>
+                                <td>{{ phone['n_calls'] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br/>
+            <div class="card">
+                <div class="card-body">
+                    <h1>Call History</h1>
+                    <table class="table dt-responsive nowrap" cellspacing="0"
+                           width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for phone in calls %}
+                            <tr>
+                                <td>{{ phone['name'] }}</td>
+                                <td>{{ phone['phone'] }}</td>
+                                <td>{{ phone['phone_date'] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
